@@ -23,8 +23,8 @@ namespace Bar.Models
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BeerPatron>()
-                .HasKey(p => new { p.BeerId, p.PatronId });
+            //modelBuilder.Entity<BeerPatron>()
+            //    .HasKey(p => new { p.BeerId, p.PatronId });
             modelBuilder.Entity<BeerPatron>()
                 .HasOne(bp => bp.Beer)
                 .WithMany(b => b.BeerPatrons)
@@ -38,11 +38,17 @@ namespace Bar.Models
 
     public class BeerPatron
     {
+        public BeerPatron()
+        {
+
+        }
         public BeerPatron(int beerId, int patronId)
         {
             BeerId = beerId;
             PatronId = patronId;
         }
+        [Key]
+        public int BeerPatronId { get; set; }
         public int BeerId { get; set; }
         public Beer Beer { get; set; }
         public int PatronId { get; set; }

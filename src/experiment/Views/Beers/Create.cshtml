@@ -5,19 +5,20 @@
 @model Bar.Models.Beer
 
 <h1>Add a beer to the database</h1>
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
+<form method="post" asp-action="Create" asp-controller="Beers" enctype="multipart/form-data">
+    <label for="name">Beer Name</label>
+    <input type="text" id="name" name="name" />
     <br />
-    @Html.LabelFor(model => model.Type)
-    @Html.TextBoxFor(model => model.Type)
+    <label for="type">Beer Type</label>
+    <input type="text" id="type" name="type" />
     <br />
-    @Html.LabelFor(model => model.Price)
-    @Html.TextBoxFor(model => model.Price, new { type="number", min="0" })
+    <label for="price">Beer Price</label>
+    <input type="number" id="price" name="price" min="0"/>
     <br />
-    @Html.LabelFor(model => model.Picture)
-    @Html.TextBoxFor(model => model.Picture, new { type="file" })
+    <label for="picture">Beer Picture</label>
+    <input type="file" id="picture" name="picture" />
     <br />
     <input class="btn" type="submit" value="Add Beer" />
+
+</form>
 }

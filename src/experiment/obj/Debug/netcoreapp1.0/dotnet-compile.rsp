@@ -200,8 +200,8 @@ C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experimen
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Controllers\BeersController.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Controllers\HomeController.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Controllers\PatronsController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Migrations\20170209173244_Initial.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Migrations\20170209173244_Initial.Designer.cs
+C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Migrations\20170209214629_Initial.cs
+C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Migrations\20170209214629_Initial.Designer.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Migrations\BarDbContextModelSnapshot.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Models\BarDbContext.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\experiment\src\experiment\Models\Beer.cs

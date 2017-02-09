@@ -10,6 +10,17 @@ namespace Bar.Models
 {
     public class Beer
     {
+        public Beer()
+        {
+
+        }
+        public Beer(string name, string type, int price, byte[] picture)
+        {
+            Name = name;
+            Type = type;
+            Price = price;
+            Picture = picture;
+        }
         public int BeerId { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }

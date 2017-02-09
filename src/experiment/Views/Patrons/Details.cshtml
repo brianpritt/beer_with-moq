@@ -16,7 +16,12 @@
 }
 
 <h4>@Model.Name's Tab</h4>
-@foreach(var beerId in Model.BeerPatrons)
-{
-    <p>beerId</p>
+@{
+    int priceCounter = 0;
+    @foreach(Bar.Models.BeerPatron beerPatron in Model.BeerPatrons)
+    {
+        priceCounter += beerPatron.Beer.Price;
+        <p>@beerPatron.Beer.Name<span>: $</span>@beerPatron.Beer.Price</p>
+    }
+    <h4>Total Bar Tab: $@priceCounter</h4>
 }

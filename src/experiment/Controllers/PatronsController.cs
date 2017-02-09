@@ -37,14 +37,14 @@ namespace Bar.Controllers
         {
             ViewBag.BeerId = new SelectList(db.Beers, "BeerId", "Name");
             return View(db.Patrons
-                .Include(patrons => patrons.BeerPatrons)
-                .FirstOrDefault(patrons => patrons.PatronId == id));
+                .Include(p => p.BeerPatrons)
+                .ThenInclude(bp => bp.Beer)
+                .FirstOrDefault(patron => patron.PatronId == id));
         }
         [HttpPost]
         public IActionResult Details(int id, Beer selectedBeer)
         {
-            Debug.WriteLine(id);
-            Debug.WriteLine(selectedBeer.BeerId);
+            
             BeerPatron newBeerPatron = new BeerPatron(selectedBeer.BeerId, id);
             db.BeerPatron.Add(newBeerPatron);
             db.SaveChanges();

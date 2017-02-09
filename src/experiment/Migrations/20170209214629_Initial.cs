@@ -43,12 +43,14 @@ namespace experiment.Migrations
                 name: "BeerPatron",
                 columns: table => new
                 {
+                    BeerPatronId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     BeerId = table.Column<int>(nullable: false),
                     PatronId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BeerPatron", x => new { x.BeerId, x.PatronId });
+                    table.PrimaryKey("PK_BeerPatron", x => x.BeerPatronId);
                     table.ForeignKey(
                         name: "FK_BeerPatron_Beers_BeerId",
                         column: x => x.BeerId,

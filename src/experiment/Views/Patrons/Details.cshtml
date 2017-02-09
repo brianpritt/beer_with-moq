@@ -1,0 +1,22 @@
+﻿@model Bar.Models.Patron
+@{
+    ViewData["Title"] = "@Model.Name";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Model.Name</h1>
+<hr />
+<h4>Purchase Beer:</h4>
+@using (Html.BeginForm())
+{
+    <label for="BeerId">Beer: </label>
+    @Html.DropDownList("BeerId")
+
+    <input class="btn" type="submit" value="Purchase Beer" />
+}
+
+<h4>@Model.Name's Tab</h4>
+@foreach(var beerId in Model.BeerPatrons)
+{
+    <p>beerId</p>
+}

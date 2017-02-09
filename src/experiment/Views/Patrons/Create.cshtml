@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Patrons";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Bar.Models.Patron
+
+<h1>Add a patron to the database</h1>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    <br />
+    @Html.LabelFor(model => model.Tab)
+    @Html.TextBoxFor(model => model.Tab, new { type = "number", min = "0" })
+    <br />
+    <input class="btn" type="submit" value="Add Patron" />
+}

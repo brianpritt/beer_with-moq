@@ -15,6 +15,7 @@ namespace Bar.Models
         }
         public DbSet<Beer> Beers { get; set; }
         public DbSet<Patron> Patrons { get; set; }
+        public DbSet<BeerPatron> BeerPatron { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -37,6 +38,11 @@ namespace Bar.Models
 
     public class BeerPatron
     {
+        public BeerPatron(int beerId, int patronId)
+        {
+            BeerId = beerId;
+            PatronId = patronId;
+        }
         public int BeerId { get; set; }
         public Beer Beer { get; set; }
         public int PatronId { get; set; }

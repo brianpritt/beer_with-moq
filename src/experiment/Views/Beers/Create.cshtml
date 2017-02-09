@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Beers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Bar.Models.Beer
+
+<h1>Add a beer to the database</h1>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    <br />
+    @Html.LabelFor(model => model.Type)
+    @Html.TextBoxFor(model => model.Type)
+    <br />
+    @Html.LabelFor(model => model.Price)
+    @Html.TextBoxFor(model => model.Price, new { type="number", min="0" })
+    <br />
+    @Html.LabelFor(model => model.Picture)
+    @Html.TextBoxFor(model => model.Picture, new { type="file" })
+    <br />
+    <input class="btn" type="submit" value="Add Beer" />
+}

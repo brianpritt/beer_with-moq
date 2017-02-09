@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Patrons";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Bar.Models.Patron>
+
+<h1>List of Patrons</h1>
+<hr />
+@foreach(Bar.Models.Patron patron in Model)
+{
+    <div class="card">
+        <div class="card-content">
+            <h4><a href="/Patrons/Details/@patron.PatronId">@patron.Name</a></h4>
+        </div>
+    </div>
+}

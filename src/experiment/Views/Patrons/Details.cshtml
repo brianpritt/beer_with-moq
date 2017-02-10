@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     <label for="BeerId">Beer: </label>
-    @Html.DropDownList("BeerId")
+    <select class="browser-default" name="selectedBeer" asp-items="@ViewBag.Beers"></select>
 
     <input class="btn" type="submit" value="Purchase Beer" />
 }

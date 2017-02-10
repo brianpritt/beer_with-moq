@@ -2,12 +2,16 @@
 @{
     ViewData["Title"] = "@Model.Name";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var base64 = Convert.ToBase64String(Model.Picture);
-    var Image = String.Format("data:image/gif;base64,{0}", base64);
+    string Image = "";
+    if (Model.Picture != null)
+    {
+        var base64 = Convert.ToBase64String(Model.Picture);
+        Image = String.Format("data:image/gif;base64,{0}", base64);
+    }
 }
 
 <h1>@Model.Name</h1>
-<img src="@Image" />
+<img height="50%" width="50%" src="@Image" />
 <hr />
 @foreach(Bar.Models.BeerPatron beerPatron in Model.BeerPatrons.ToList())
 {

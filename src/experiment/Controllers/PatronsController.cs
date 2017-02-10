@@ -35,7 +35,7 @@ namespace Bar.Controllers
 
         public IActionResult Details(int id)
         {
-            ViewBag.BeerId = new SelectList(db.Beers, "BeerId", "Name");
+            ViewBag.Beers = new SelectList(db.Beers, "BeerId", "Name");
             return View(db.Patrons
                 .Include(p => p.BeerPatrons)
                 .ThenInclude(bp => bp.Beer)
@@ -44,10 +44,10 @@ namespace Bar.Controllers
         [HttpPost]
         public IActionResult Details(int id, Beer selectedBeer)
         {
-            
-            BeerPatron newBeerPatron = new BeerPatron(selectedBeer.BeerId, id);
-            db.BeerPatron.Add(newBeerPatron);
-            db.SaveChanges();
+            Debug.WriteLine(selectedBeer.Name);
+            //BeerPatron newBeerPatron = new BeerPatron(selectedBeer.BeerId, id);
+            //db.BeerPatron.Add(newBeerPatron);
+            //db.SaveChanges();
             return RedirectToAction("Details");
         }
     }

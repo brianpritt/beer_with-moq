@@ -10,6 +10,22 @@ namespace Bar.Models
 {
     public class Beer
     {
+        public override bool Equals(System.Object otherBeer)
+        {
+            if(!(otherBeer is Beer))
+            {
+                return false;
+            }
+            else
+            {
+                Beer newBeer = (Beer)otherBeer;
+                return this.BeerId.Equals(newBeer.BeerId);
+            }
+        }
+        public override int GetHashCode()
+        {
+            return this.BeerId.GetHashCode();
+        }
         public Beer()
         {
 

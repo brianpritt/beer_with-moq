@@ -8,18 +8,29 @@ using Bar.Models;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using Bar.Models.Repositories;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Bar.Controllers
 {
     public class BeersController : Controller
     {
-        private BarDbContext db = new BarDbContext();
+        private IBeerRepository beerRepo;
+        public BeersController(IBeerRepository thisRepo = null)
+        {
+            if(thisRepo == null)
+            {
+                this.beerRepo = new EFBeerRepository();
+            }
+            else
+            {
+                this.beerRepo = thisRepo;
+            }
+        }
         public IActionResult Index()
         {
             Debug.WriteLine("hello");
-            return View(db.Beers.ToList());
+            return View(beerRepo.Beers.ToList());
         }
 
         public IActionResult Create()
@@ -27,7 +38,7 @@ namespace Bar.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(string name, string type, string price, IFormFile picture)
+        public IActionResult Create(string name, string type, int price, IFormFile picture)
         {
             byte[] pictureArray = new byte[0];
             Debug.WriteLine(picture);
@@ -40,15 +51,15 @@ namespace Bar.Controllers
                     pictureArray = ms.ToArray();
                 }
             }
-            Beer newBeer = new Models.Beer(name, type, int.Parse(price), pictureArray);
-            db.Beers.Add(newBeer);
-            db.SaveChanges();
+            Beer newBeer = new Models.Beer(name, type, price, pictureArray);
+            beerRepo.Add(newBeer);
+            
             return RedirectToAction("Index");
         }
 
         public IActionResult Details(int id)
         {
-            return View(db.Beers.Include(beers => beers.BeerPatrons)
+            return View(beerRepo.Beers.Include(beers => beers.BeerPatrons)
                 .FirstOrDefault(beers => beers.BeerId == id));
         }
     }

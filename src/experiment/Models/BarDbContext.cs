@@ -13,7 +13,7 @@ namespace Bar.Models
         {
 
         }
-        public DbSet<Beer> Beers { get; set; }
+        public virtual DbSet<Beer> Beers { get; set; }
         public DbSet<Patron> Patrons { get; set; }
         public DbSet<BeerPatron> BeerPatron { get; set; }
 

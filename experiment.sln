@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Bar", "src\experiment\Bar.xproj", "{21D427C5-2030-453C-9AF6-D78EB10D3343}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0BE4A7FF-2A14-4983-8FA2-FD65C3EE7DC8}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Testing", "Testing\Testing.xproj", "{410D3B04-4A19-4284-AF4B-081DEF01F8E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,16 @@ Global
 		{21D427C5-2030-453C-9AF6-D78EB10D3343}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21D427C5-2030-453C-9AF6-D78EB10D3343}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21D427C5-2030-453C-9AF6-D78EB10D3343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{410D3B04-4A19-4284-AF4B-081DEF01F8E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410D3B04-4A19-4284-AF4B-081DEF01F8E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410D3B04-4A19-4284-AF4B-081DEF01F8E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410D3B04-4A19-4284-AF4B-081DEF01F8E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{21D427C5-2030-453C-9AF6-D78EB10D3343} = {C2E6924B-6E63-4499-8737-3783DEE6D745}
+		{410D3B04-4A19-4284-AF4B-081DEF01F8E1} = {0BE4A7FF-2A14-4983-8FA2-FD65C3EE7DC8}
 	EndGlobalSection
 EndGlobal

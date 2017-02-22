@@ -15,5 +15,17 @@ namespace Bar.Controllers
         {
             return View();
         }
+        public IActionResult HelloAjax()
+        {
+            return Content("For Days!");
+        }
+        public IActionResult Sum(int firstNumber, int secondNumber)
+        {
+            return Content((firstNumber + secondNumber).ToString(), "text/plain");
+        }
+        public IActionResult DisplayViewWithAjax()
+        {
+            return View();
+        }
     }
 }

@@ -44,7 +44,7 @@ namespace Bar.Controllers
         [HttpPost]
         public IActionResult Details(int id, Beer selectedBeer)
         {
-            Debug.WriteLine(selectedBeer.Name);
+            //Debug.WriteLine(selectedBeer.Name);
             //BeerPatron newBeerPatron = new BeerPatron(selectedBeer.BeerId, id);
             //db.BeerPatron.Add(newBeerPatron);
             //db.SaveChanges();

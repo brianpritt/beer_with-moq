@@ -62,5 +62,12 @@ namespace Bar.Controllers
             return View(beerRepo.Beers.Include(beers => beers.BeerPatrons)
                 .FirstOrDefault(beers => beers.BeerId == id));
         }
+
+        public IActionResult DisplayBeer() 
+        {
+            var beers = beerRepo.Beers.ToList();
+            //Beer beer = new Beer("Hamms", "water", 7, null);
+            return Json(beers);
+        }
     }
 }

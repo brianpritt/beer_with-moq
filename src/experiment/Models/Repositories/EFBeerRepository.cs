@@ -10,6 +10,17 @@ namespace Bar.Models.Repositories
     {
         BarDbContext db = new BarDbContext();
 
+        public EFBeerRepository(BarDbContext connection = null)
+        {
+            if(connection == null)
+            {
+                this.db = new BarDbContext();
+            }
+            else
+            {
+                this.db = connection;
+            }
+        }
         public IQueryable<Beer> Beers
         { get { return db.Beers; } }
 

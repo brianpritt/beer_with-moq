@@ -11,6 +11,9 @@
 }
 
 <h1>@Model.Name</h1>
+<p><a href="/Beers/">Back</a></p>
+<p><a href="/">Home</a></p>
+<hr />
 <img height="50%" width="50%" src="@Image" />
 <hr />
 @foreach(Bar.Models.BeerPatron beerPatron in Model.BeerPatrons.ToList())

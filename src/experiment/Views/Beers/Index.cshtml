@@ -3,8 +3,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model List<Bar.Models.Beer>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.display-beer').click(function () {
+            $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json',
+                url: '@Url.Action("DisplayBeer")',
+                success: function (result) {
+                    $.each(result, function (i) {
+                        console.log(result[i].name);
+                        
+                        var resultString = '<br>Beer: ' + result[i].name + '<br>Type: ' + result[i].type + '<br>Price: ' + result[i].price;
+                    
+                        $('#result3').append(resultString);
+
+                    })
+                }
+            });
+        });
+    });
+</script>
 
 <h1>List of Beers</h1>
+<p><a href="/Beers/Create">Add a beer</a></p>
+<p><a href="/">Home</a></p>
 <hr />
 @foreach (Bar.Models.Beer beer in Model)
 {
@@ -18,3 +42,7 @@
         </div>
     </a>
 }
+
+<h2>Clicking beers to do stuff</h2>
+<h4 class="display-beer">Display Beer</h4>
+<div id="result3"></div>

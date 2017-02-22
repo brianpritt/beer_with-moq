@@ -3,6 +3,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        @*$('.hello-ajax').click(function () {
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("HelloAjax")',
+                success: function (result) {
+                    $('#result1').html(result);
+
+                }
+            });
+        });
+        $('.sum').click(function () {
+            $.ajax({
+                type: 'GET',
+                data: { firstNumber: 1, secondNumber: 2 },
+                url: '@Url.Action("Sum")',
+                success: function (result) {
+                    $('#result2').html(result);
+
+                }
+            });
+        });*@
+        @*$('.display-view').click(function () {
+            $.ajax({
+                type: 'GET',
+                dataType: 'html',
+                url: '@Url.Action("DisplayViewWithAjax")',
+                success: function (result) {
+                    $('#result4').html(result);
+                }
+            });
+        });*@
+    });
+    
+</script>
+
+
+<body>
+    
+    <h3>Beer There, Done That.</h3>
+    @*<h4 class="hello-ajax">Beer</h4>
+    <div id="result1"></div>
+
+    
+    <h4 class="sum">Sum</h4>
+    <div id="result2"></div>*@
+    @*<h2>Displaying a view</h2>
+    <h4 class="display-view">Display view</h4>
+    <div id="result4"></div>*@
+</body>
+
 <a href="/Patrons">Patrons</a>
 <br />
 <a href="/Beers">Beers</a>
